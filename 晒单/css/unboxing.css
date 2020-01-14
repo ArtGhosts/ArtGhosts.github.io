@@ -149,7 +149,7 @@ body {
 }
 
 .bottonOne {
-	width: 379px;
+	width: 410px;
 	height: 538px;
 	background: white;
 	padding: 12px 15px 0 15px;
@@ -281,7 +281,7 @@ body {
 
 @media (max-width:1422px) {
 	.botton {
-		width: 800px;
+		width: 860px;
 	}
 }
 
@@ -300,6 +300,6 @@ body {
 
 @media (max-width:952px) {
 	.botton {
-		width: 390px;
+		width: 425px;
 	}
 }
