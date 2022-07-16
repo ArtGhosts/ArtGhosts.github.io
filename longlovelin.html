@@ -1,4 +1,4 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 
 	<head>
@@ -6,48 +6,149 @@
 		<title>李&郝</title>
 		<style type="text/css">
 			html {
-			    height: 100%;
-			    width: 100%;
+				height: 100%;
+				width: 100%;
 			}
-			
+
 			body {
-				
-				margin-top: 50%;
+
 				background: rgb(160, 189, 211);
-				/*padding-left:rem;*/
-				width: 85%;
-				margin: 60% auto 0;
+				    width: 100%;
+				    margin: 10% 0;
+				    font-size: 48px;
+				    color: rgba(255,255,255,.7);
+					box-sizing: border-box;
+				/* background: url(https://artghosts.github.io/lin.jpg) no-repeat 0 0 /cover; */
+			}
+			.newData{
+				position: relative;
+				z-index: 10000;
+				    height: 100%;
+					padding: 0 40px;
+					    padding-top: 50px;
+			}
+			.newData p {
 				font-size: 48px;
-				color: FFAEB9;
-				background: url(https://artghosts.github.io/lin.jpg) no-repeat 0 0 /cover;
+				margin-top: 20px;
+				margin-bottom: 20px;
+			}
+
+			.newData span {
+				font-size: 42px;
+			}
+
+			.mixTime p {
+				text-align: center;
+			}
+
+			.mixTime span {
+				font-weight: bold;
+				display: inline-block;
+				margin: 0 10px;
+				font-size: 80px !important;    color: #fff;
+			}
+			.NewImg{
+				      position: absolute;
+				      left: 0;
+				      /* height: 100%; */
+				      top: 35%;
+				      width: 100%;
+					  
+ 
 			}
 		</style>
 	</head>
 
-	<body>
+	<body style="
+	    position: relative;
+	    height: 100%;
+	"  class="Bodys">
+	<img src="../lin/lin3.jpg" alt="" class="NewImg">
 		<!--<img src="obj.jpg"/>-->
-	</body>
-	<script type="text/javascript">
-		//计算过去的某个时间 已经过去多少天 
-		function countDown() {
-			var now = new Date(); //获取当前时间  
-			console.log(now);
-			var formerly = new Date(2022, 6, 10, 00, 00, 0); //自定义时间  
-			var stampFormerly = formerly.getTime(); //自定义的时间到1970年的时间戳  
-			var stampNow = now.getTime(); //当前时间到1970年的时间戳  
-			var res = (stampNow - stampFormerly) / 1000;
-			//秒 差值  
-			//天  
-			var d = Math.floor(res / (60 * 60 * 24));
-			//时  
-			var h = Math.floor(res % (60 * 60 * 24) / (60 * 60));
-			//分  
-			var m = Math.floor(res % (60 * 60 * 24) % (60 * 60) / 60);
-			//秒  
-			var s = Math.floor(res % (60 * 60 * 24) % (60 * 60) % 60);
-			document.body.innerHTML = "在一起的第" + d + "天" + h + "时" + m + "分" + s + "秒❤</br>I always have loved you and always will love you.<br>晚风踩着云朵,月亮贩卖快乐,而你来自万千银河,是我翘首以盼的惊喜<br><br>我们会很合适,慢慢来,我很爱你,和你一起的每个平平淡淡,都很浪漫. ";
-		}
-// 		setInterval(countDown, 10);
-	</script>
+		<div class="newData">
+			<div class="mixTime">
+				<p style="text-align: center;font-size: 50px;color: #fff;">在一起 ❤</p>
+				<p class="newDateTime"> </p>
 
+			</div>
+
+
+
+			<span style="
+	    text-indent: 80px;
+	    display: inline-block;
+	    margin: 40px 0;
+	">晚风踩着云朵,月亮贩卖快乐,而你来自万千银河,是我翘首以盼的惊喜.</span>
+
+			<span style="
+	    text-indent: 80px;
+	    display: inline-block;
+	">我们会很合适,慢慢来,我很爱你,和你一起的每个平平淡淡,都很浪漫. <br><span style="
+    display: inline-block;
+    text-align: right;
+    width: 100%;
+">To 琳琳</span></span>
+			<p style="
+	        font-size: 38px;
+	"> I always have loved you and always will love you.</p>
+
+		</div>
+		<script>
+			document.write('<script src="//' + (location.host || 'localhost').split(':')[0] +
+				':35929/livereload.js?snipver=1"></' + 'script>')
+		</script>
+		<script src="//127.0.0.1:35929/livereload.js?snipver=1"></script>
+		<script>
+			document.addEventListener('LiveReloadDisconnect', function() {
+				setTimeout(function() {
+					window.location.reload();
+				}, 500);
+			})
+		</script>
+		<script src="Scripts/jquery-1.8.3.js"></script>
+		<script type="text/javascript">
+			//计算过去的某个时间 已经过去多少天 
+			function countDown() {
+				var now = new Date(); //获取当前时间  
+				 
+				var formerly = new Date(2022, 6, 10, 00, 00, 0); //自定义时间  
+				var stampFormerly = formerly.getTime(); //自定义的时间到1970年的时间戳  
+				var stampNow = now.getTime(); //当前时间到1970年的时间戳  
+				var res = (stampNow - stampFormerly) / 1000;
+				//秒 差值  
+				//天  
+				var d = Math.floor(res / (60 * 60 * 24));
+				//时  
+				var h = Math.floor(res % (60 * 60 * 24) / (60 * 60));
+				//分  
+				var m = Math.floor(res % (60 * 60 * 24) % (60 * 60) / 60);
+				//秒  
+				var s = Math.floor(res % (60 * 60 * 24) % (60 * 60) % 60);
+				let dataTImeNew=`
+				<span>${d} </span>天<span>${h}</span>时<span>${m}</span>分<span>${s}</span>秒
+				`
+				$(".newDateTime").html(dataTImeNew)
+				
+
+				// document.body.innerHTML = "";
+			}
+			var count=1;
+			function  CountImg(){
+				
+				if(count+1>9){
+				count=0;	
+				}
+				count+=1;
+				console.log(count)
+				let imgs="../lin/lin"+count+".jpg"
+				 $(".NewImg").attr("src",imgs)
+			}
+			// setInterval(CountImg,8000)
+			// countDown();
+			setInterval(countDown, 1000);
+		</script>
+
+	</body>
+ 
+	 
 </html>
