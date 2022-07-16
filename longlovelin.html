@@ -14,18 +14,25 @@
 
 				background: rgb(160, 189, 211);
 				    width: 100%;
-				    margin: 10% 0;
+				   
 				    font-size: 48px;
 				    color: rgba(255,255,255,.7);
 					box-sizing: border-box;
-				/* background: url(https://artghosts.github.io/lin.jpg) no-repeat 0 0 /cover; */
 			}
 			.newData{
 				position: relative;
 				z-index: 10000;
-				    height: 100%;
+				     
 					padding: 0 40px;
 					    padding-top: 50px;
+			}
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			p{
+				margin: 0;
+				padding: 0;
 			}
 			.newData p {
 				font-size: 48px;
@@ -50,7 +57,6 @@
 			.NewImg{
 				      position: absolute;
 				      left: 0;
-				      /* height: 100%; */
 				      top: 35%;
 				      width: 100%;
 					  
@@ -64,7 +70,7 @@
 	    height: 100%;
 	"  class="Bodys">
 	<img src="./lin/lin1.jpg" alt="" class="NewImg">
-		<!--<img src="obj.jpg"/>-->
+	 
 		<div class="newData">
 			<div class="mixTime">
 				<p style="text-align: center;font-size: 50px;color: #fff;">在一起 ❤</p>
@@ -105,7 +111,7 @@
 				}, 500);
 			})
 		</script>
-		<script src="Scripts/jquery-1.8.3.js"></script>
+		<script src="./jquery-1.8.3.js"></script>
 		<script type="text/javascript">
 			//计算过去的某个时间 已经过去多少天 
 			function countDown() {
@@ -143,7 +149,7 @@
 				let imgs="./lin/lin"+count+".jpg"
 				 $(".NewImg").attr("src",imgs)
 			}
-			 setInterval(CountImg,8000)
+			 setInterval(CountImg,3000)
 			// countDown();
 			setInterval(countDown, 1000);
 		</script>
