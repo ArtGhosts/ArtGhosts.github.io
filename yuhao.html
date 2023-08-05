@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <!-- import CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+    <style>
+        .xiu{
+            background: red;
+            
+    float: right;
+    padding: 5px;
+    font-size: 30px;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    line-height: 30px;
+    margin: 0;
+        }
+        .changgui{
+         
+            
+    float: right;
+    padding: 5px;
+    font-size: 30px;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    line-height: 30px;
+    margin: 0;
+        }
+        .spandate{
+            text-align: center;
+        }
+        .facted{
+            width: 100%;
+    display: flex;
+    height: 100%;
+    align-items: center;
+    justify-content: space-around;
+        }
+        .el-calendar-day{
+            padding: 0;
+        }
+        .top{
+            font-size: 40px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <div class="top">玉浩排期表</div>
+        <el-divider></el-divider>
+      
+        <el-calendar style="height: 530px;" v-model="nowdate">
+            <template slot="dateCell" slot-scope="{date, data}">
+                <div class="facted">
+                    <!-- <div v-for="item in activeday" style="width: 0;height: 0px;">
+            <el-badge  v-if="data.day == item.dat" :value="item.coun"></el-badge>
+          </div> -->
+
+                  
+                    <div class="spandate">{{ data.day.split('-').slice(2).join('-') }}</div>
+                    <div :class="obj(date)=='休'?'xiu':'changgui'">{{obj(date)}}</div>
+                </div>
+            </template>
+        </el-calendar>
+    </div>
+</body>
+<!-- import Vue before Element -->
+<script src="https://unpkg.com/vue@2/dist/vue.js"></script>
+<!-- import JavaScript -->
+<script src="https://unpkg.com/element-ui/lib/index.js"></script>
+<script>
+    new Vue({
+        el: '#app',
+        data: function () {
+            return {
+                visible: false,
+                nowdate: new Date(),
+                eightList:[
+                   "夜",
+                   "付",
+                   "下",
+                   "休",
+                   "休",
+                   "主",
+                   "责",
+                   "疑",
+                ]
+            }
+        },
+        created() {
+            // console.log("111")
+            // console.log("十年循环" + parseInt(365 / 8 * 10) + "遍")
+            // this.timeFn()
+            // this.dataFn();
+            // this.obj()
+            // console.log(this.obj())
+        },
+        methods: {
+            obj(dataaaa){ 
+                let date=(new Date(dataaaa)-new Date("2023-07-30"))/(24*60*60*1000)
+                var baData=date/8
+                // 判断当前日期是否能被8整除
+                if(baData!=1&&Number.isInteger(baData)){
+                    
+                    return this.eightList[7]
+                }else{
+                     if(baData==1){
+                        console.log(this.eightList[baData-1])
+
+                        return this.eightList[baData-1]
+                     }else{  
+                        var i= date-(parseInt(baData)*8); 
+                        console.log(this.eightList[i-1])
+                        return this.eightList[i-1]
+
+                     }
+                }
+            },
+            timeFn() {
+                const currentDate = new Date("2023-07-31");
+                const pastDate = new Date(currentDate.getTime() + (8 * 24 * 60 * 60 * 1000));
+                for(let i=0;i<10;i++){
+                    var data= new Date(pastDate.getTime() + (i * 8 * 24 * 60 * 60 * 1000));
+                }
+                if((new Date()-new Date("2023-07-31"))/(24*60*60*1000)>8){
+
+                }else{
+                    this.lessFn(new Date(),(new Date()-new Date("2023-07-31"))/(24*60*60*1000));
+                }
+            },
+            lessFn(data,index){
+                console.log(this.eightList[index-1])
+            },
+            dataFn() {
+                var date = new Date();
+                console.log(date.getFullYear()); // 返回当前日期的年  2020
+                console.log(date.getMonth() + 1); // 月份 返回的月份小1个月   记得月份+1 呦 11
+                console.log(date.getDate()); // 返回的是 几号 28
+                console.log(date.getDay()); // 3  周一返回的是 1 周六返回的是 6 但是 周日返回的是 0 6
+                // 我们写一个 2019年 5月 1日 星期三
+                var year = date.getFullYear();
+                var month = date.getMonth() + 1;
+                var dates = date.getDate();
+                var arr = ['星期日', '星期一', '星期二', '星期三', '星期四', '星期五', '星期六'];
+                var day = date.getDay();
+                console.log('今天是：' + year + '年' + month + '月' + dates + '日 ' + arr[day]);
+            },
+        },
+
+    })
+</script>
+
+</html>
